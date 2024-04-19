@@ -17,7 +17,7 @@ jobs:
         uses: laurence79/files-have-changed@v1.0.0
         with:
           since_sha: ${{ steps.last_success.outputs.commit_sha }}
-          globs: |-
+          globs: |
             packages/client/**/*.*
 
       - name: Test

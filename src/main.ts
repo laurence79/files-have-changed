@@ -11,7 +11,7 @@ async function run(): Promise<void> {
   try {
     const since = core.getInput('since_sha');
     const now = github.context.sha;
-    const globs = core.getMultilineInput('files');
+    const globs = core.getMultilineInput('globs');
 
     if (!since) {
       core.info(
