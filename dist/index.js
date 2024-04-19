@@ -31699,7 +31699,12 @@ async function run() {
     try {
         const since = core.getInput('since_sha');
         const now = github.context.sha;
-        const globs = core.getMultilineInput('files');
+        const globs = core.getMultilineInput('globs');
+        if (!since) {
+            core.info("since_sha not supplied or empty. Setting has_changes to 'true'");
+            core.setOutput('has_changes', 'true');
+            return;
+        }
         core.info(`Finding files that changed between ${since} and ${now}, filtered by ${globs.join(',')}`);
         const files = await (0, getChangedFiles_1.default)(since, now);
         const result = globs ? (0, filesMatchingGlobs_1.default)(files, globs) : files;
