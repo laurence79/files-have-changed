@@ -28,7 +28,7 @@ jobs:
 ## Inputs
 | Name      | Description                                          | Type   | Required |
 |-----------|------------------------------------------------------|--------|----------|
-| since_sha | The commit SHA to compare against                    | string | Y        |
+| since_sha | The commit SHA to compare against                    | string | N        |
 | globs     | Globs to filter the changed files. Multi-line string | string | N        |
 
 

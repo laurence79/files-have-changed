@@ -13,6 +13,14 @@ async function run(): Promise<void> {
     const now = github.context.sha;
     const globs = core.getMultilineInput('files');
 
+    if (!since) {
+      core.info(
+        "since_sha not supplied or empty. Setting has_changes to 'true'"
+      );
+      core.setOutput('has_changes', 'true');
+      return;
+    }
+
     core.info(
       `Finding files that changed between ${since} and ${now}, filtered by ${globs.join(
         ','

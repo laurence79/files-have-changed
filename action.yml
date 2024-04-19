@@ -11,7 +11,7 @@ branding:
 inputs:
   since_sha:
     description: 'The commit SHA to compare against'
-    required: true
+    required: false
   globs:
     description: 'Globs to filter the changed files. Multi-line string'
     required: false
