@@ -21,7 +21,7 @@ jobs:
             packages/client/**/*.*
 
       - name: Test
-        if: ${{ steps.client_changed.outputs.has_changes = 'true' }}
+        if: ${{ steps.client_changed.outputs.has_changes == 'true' }}
         run: npm run test --workspace client
 ```
 
